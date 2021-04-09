@@ -5,8 +5,8 @@ from annoy_scammers.helpers import rand_int, rand_letters
 
 
 def get_name():
-    f_names = open('firstnames.txt', 'r').read().split('\n')
-    l_names = open('lastnames.txt', 'r').read().split('\n')
+    f_names = open('data/firstnames.txt', 'r').read().split('\n')
+    l_names = open('data/lastnames.txt', 'r').read().split('\n')
     first = choice(f_names)
     last = choice(l_names)
 
@@ -34,7 +34,7 @@ def get_postcode():
 
 
 def get_address():
-    words = open('words.txt', 'r').read().split('\n')
+    words = open('data/words.txt', 'r').read().split('\n')
     filtered_words = [w for w in words if len(w) >= 3]
     street_names = [w for w in filtered_words if w[0].isupper() and w[1:].islower()]
     suffixes = ['Road', 'Street', 'Lane', 'Avenue', 'Drive']
